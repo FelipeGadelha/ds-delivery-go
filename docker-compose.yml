@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:14-alpine
+    container_name: pg-ds-delivery-go-db
+    environment:
+      - POSTGRES_DB=ds-delivery-go-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - 5432:5432
+    volumes:
+      - .docker/dev_data:/var/lib/postgresql
